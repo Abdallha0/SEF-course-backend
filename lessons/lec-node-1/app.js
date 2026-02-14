@@ -23,3 +23,22 @@ const { firstName, lastName } = require("./data1.js")
 console.log(firstName+" "+lastName)
 
 // 2- npm (external packges)  (Node Package Manager)
+
+  // 1- (npm init -y) to build (packge.json)
+  // install packges ( ipm i validator )
+
+  const validator = require("validator");
+  console.log(validator.isEmail("example@gmail.com"))
+
+  // npm i   ( to return all packges )
+
+
+  // replace file content to new content
+//  fs.writeFile("data.txt", "New Content", "utf8", (err) => {
+//   if(err){
+//     console.log(err)
+//   }else{
+//     console.log("file written success")
+//   }
+// })
+fs.writeFileSync("data.txt", "Hello World!")

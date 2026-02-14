@@ -1,0 +1,18 @@
+# Node
+node_modules
+npm-debug.log
+.env
+
+# Build
+/build
+/dist
+
+# Logs
+logs
+*.logs
+
+# OS
+.DS_Store
+Thumbs.dbvedio.mp4
+
+vedio.mp4

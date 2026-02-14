@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "fname": "Abdallha",
+        "lname": "Mohamed",
+        "age": 17,
+        "city": "ismalia"
+    },
+    {
+        "id": 2,
+        "fname": "Hassan",
+        "lname": "Essam",
+        "age": 20,
+        "city": "cairo"
+    }
+]
