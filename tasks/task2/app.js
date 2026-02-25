@@ -9,7 +9,7 @@ geocast(region, url, key, (error, data) => {
     if (error) return console.log("-------------------------------\n" + error)
     forcast(data.lat, data.long, url, key, (error, data) => {
         if (error) return console.log("-------------------------------\n" + error)
-        const shownData = [`Region: ${data.location.name} ( ${data.location.country} )`, `Tempereture: ${data.current.temp_c}C`, `Latitude: ${data.location.lat}`, `Longitude: ${data.location.lon}`]
+        const shownData = [`Region: ${data.location.name} ( ${data.location.country} )`, `Tempereture: ${data.current.temp_c}C  ( ${data.current.condition.text} )`, `Latitude: ${data.location.lat}`, `Longitude: ${data.location.lon}`]
         console.log("-------------------------------")
         shownData.forEach(i => console.log(i))
     })
