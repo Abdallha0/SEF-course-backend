@@ -16,7 +16,6 @@ const app = express();
 const port = process.env.PORT || 5000;
 const path = require("path");
 const x = path.join(__dirname, "./lessons/lec-node-7/public")
-console.log(x)
 app.use(express.static(x));
 
 app.get("/", (req, res) => {
