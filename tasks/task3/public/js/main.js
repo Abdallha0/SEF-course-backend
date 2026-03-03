@@ -1,20 +1,39 @@
 async function connectServer(query) {
+  if (!navigator.onLine) {
+    return {
+      message: "please connect to internet",
+      ok: false
+    }
+  }
   try {
     const res = await fetch("http://localhost:5000/api/weather" + "?query=" + query);
     const data = await res.json();
-    return data
+
+    return data || null
   } catch (error) {
-    console.log(error)
+    if (!res.ok) return {
+      message: "something went wrong when trying to connect server.",
+      ok: false
+
+    }
     return;
   }
 }
 
 const cardBody = document.getElementById("cardBody")
 document.getElementById("searchForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+  if (!navigator.onLine) {
+    cardBody.innerHTML = `<p class="err-msg">please check your internet connection</p>`
+    return
+  };
   cardBody.innerHTML = '<span class="loader"></span>'
-  e.preventDefault()
   const value = e.target.input.value.trim();
-  if (!value) return;
+  if (!value) {
+    cardBody.innerHTML = `<p class="err-msg">please enter search query</p>`
+    return;
+  };
+
   const data = await connectServer(value);
 
   if (!data.ok) {
